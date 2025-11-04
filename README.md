@@ -19,3 +19,8 @@
 * Email: dizdonchik@gmail.com
 * LinkedIn: https://www.linkedin.com/in/diana-prokhorova-640bab16a/
 * Telegram: @dizdonchik
+
+# Будущие планы
+
+* Углубленное изучение Git и освоение продвинутых команд.
+* Обучение основам языка **JavaScript для автоматизированного тестирования**.
