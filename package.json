@@ -1,0 +1,24 @@
+{
+  "name": "my-first-repo",
+  "version": "1.0.0",
+  "description": "Привет! Меня зовут Диана Прохорова. Я учусь пользоваться Git и GitHub.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dizdonchik/my-first-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dizdonchik/my-first-repo/issues"
+  },
+  "homepage": "https://github.com/dizdonchik/my-first-repo#readme",
+  "dependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}
