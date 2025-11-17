@@ -10,7 +10,7 @@ export class CheckoutCompletePage {
 
     async getCompletionMessage() {
         await expect(this.completeHeaderTitle).toBeVisible();
-        return await this.completeHeaderTitle.textContent();
+        return this.completeHeaderTitle.textContent();
     }
 
 }

@@ -31,6 +31,6 @@ export class InventoryPage {
 
     async getPageTitle() {
         await expect(this.pageTitle).toBeVisible(); 
-        return await this.pageTitle.textContent();
+        return this.pageTitle.textContent();
     }
 }

@@ -1,0 +1,4 @@
+# Папки, которые не должны быть в проекте:
+node_modules
+playwright-report
+test-results
