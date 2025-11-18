@@ -2,7 +2,7 @@
 const { test, expect } = require('@playwright/test');
 
 // Описываем наш набор тестов
-test.describe('Авторизация на Sauce Demo', () => {
+test.describe('Авторизация на Sauce Demo', { tag: '@ui' }, () => {
 
   // Создаем тест-кейс
   test('Пользователь должен успешно войти в систему', async ({ page }) => {
