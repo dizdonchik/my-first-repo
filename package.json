@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tests:ui": "npx playwright test --project=ui", 
-    "tests:api": "npx playwright test --project=api", 
+    "tests:ui": "npx playwright test --project=ui --reporter=html=playwright-report-ui", 
+    "tests:api": "npx playwright test --project=api --reporter=html=playwright-report-api", 
     "tests:all": "npx playwright test"
   },
   "repository": {
