@@ -4,7 +4,7 @@ let createdBookingId;
 let authToken;
 
 // test.describe.serial для последовательного выполнения - так можно делать?
-test.describe.serial('API-тесты для Restful-booker', { tag: '@api' }, () => {
+test.describe.serial('API-тесты для Restful-booker', () => {
 
   const baseURL = 'https://restful-booker.herokuapp.com';
 
