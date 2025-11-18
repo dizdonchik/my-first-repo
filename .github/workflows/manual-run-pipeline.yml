@@ -20,13 +20,24 @@ jobs: # Список работ
         - name: Install Playwright Browsers
           run: npx playwright install --with-deps # 4. Установка браузеров Playwright
 
-        - name: Run Playwright tests 
-          run: npx playwright test # 5. Запуск тестов
+        - name: Run UI tests 
+          run: npx playwright test --project=ui --reporter=html --output=playwright-report-ui # 5. Запуск UI тестов
 
-        - name: Upload report # 6. Загрузка отчетов (Artifacts)
+        - name: Run API tests 
+          run: npx playwright test --project=api --reporter=html --output=playwright-report-api # 6. Запуск API тестов
+
+        - name: Upload UI test report # 7. Загрузка отчетов (Artifacts)
           if: always()
           uses: actions/upload-artifact@v4
           with:
-            name: playwright-report
-            path: playwright-report/
+            name: playwright-report-ui
+            path: playwright-report-ui/
+            retention-days: 7
+
+        - name: Upload API test report # 7. Загрузка отчетов (Artifacts)
+          if: always()
+          uses: actions/upload-artifact@v4
+          with:
+            name: playwright-report-api
+            path: playwright-report-api/
             retention-days: 7
