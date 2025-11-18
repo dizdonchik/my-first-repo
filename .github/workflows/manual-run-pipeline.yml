@@ -31,12 +31,14 @@ jobs: # Список работ
           uses: actions/upload-artifact@v4 
           with: 
             name: playwright-report-ui 
-            path: playwright-report-ui/ retention-days: 7
+            path: playwright-report-ui/ 
+            retention-days: 7
 
         - name: Upload API test report 
           if: always() 
           uses: actions/upload-artifact@v4 
           with: 
             name: playwright-report-api 
-            path: playwright-report-api/ retention-days: 7
+            path: playwright-report-api/ 
+            retention-days: 7
 
