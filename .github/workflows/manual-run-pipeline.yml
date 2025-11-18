@@ -1,0 +1,42 @@
+name: Manual Test Run # Название пайплайна
+
+on:
+  workflow_dispatch: # Этот триггер позволяет запускать пайплайн вручную
+
+jobs: # Список работ
+  run-tests: # Название работы
+    runs-on: ubuntu-latest # На какой ОС запускать
+    steps: # Шаги, которые нужно выполнить
+        - uses: actions/checkout@v4 # 1. Клонирование репозитория
+
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '22.x' # 2. Устанавливаем Node.js
+
+        - name: Install dependencies
+          run: npm install # 3. Установка зависимостей
+
+        - name: Install Playwright Browsers
+          run: npx playwright install --with-deps # 4. Установка браузеров Playwright
+
+        - name: Run UI tests 
+          run: npm run tests:ui -- --reporter=html --output=playwright-report-ui # 5. Запуск UI тестов
+
+        - name: Run API tests
+          run: npm run tests:api -- --reporter=html --output=playwright-report-api # 6. Запуск API тестов
+
+        - name: Upload UI test report # 7. Загрузка отчетов (Artifacts)
+          if: always() 
+          uses: actions/upload-artifact@v4 
+          with: 
+            name: playwright-report-ui 
+            path: playwright-report-ui/ retention-days: 7
+
+        - name: Upload API test report 
+          if: always() 
+          uses: actions/upload-artifact@v4 
+          with: 
+            name: playwright-report-api 
+            path: playwright-report-api/ retention-days: 7
+

@@ -4,7 +4,11 @@
   "description": "Привет! Меня зовут Диана Прохорова. Я учусь пользоваться Git и GitHub.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tests:ui": "npx playwright test --grep @ui", 
+    "tests:api": "npx playwright test --grep @api", 
+    "tests:all": "npx playwright test"
+
   },
   "repository": {
     "type": "git",
