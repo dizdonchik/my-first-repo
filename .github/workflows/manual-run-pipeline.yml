@@ -21,10 +21,10 @@ jobs: # Список работ
           run: npx playwright install --with-deps # 4. Установка браузеров Playwright
 
         - name: Run UI tests 
-          run: npx playwright test --project=ui --reporter=html=playwright-report-ui # 5. Запуск UI тестов
+          run: npm run tests:ui -- --reporter=html --output=playwright-report-ui # 5. Запуск UI тестов
 
         - name: Run API tests 
-          run: npx playwright test --project=api --reporter=html=playwright-report-api # 6. Запуск API тестов
+          run: npm run tests:api -- --reporter=html --output=playwright-report-api # 6. Запуск API тестов
 
         - name: Upload UI test report # 7. Загрузка отчетов (Artifacts)
           if: always()
